@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Download free movies,tv shows, porns, games, software, apps, ebooks, Hd movies torrents.">
+	<meta name="keywords" content="movies, tv shows, porns, games, software, apps, ebooks, Hd movies">
+    <meta name="author" content="">
+	<meta name='robots' content='index,follow'>
+	<link rel="shortcut icon" href="//storage.googleapis.com/boysofts.appspot.com/file-search-engine/favicon.ico" type="image/x-icon">
+		
+
+    <title>Best File Search Engine | Free Download</title>
+	
+
+	<meta property="og:title" content="Best File Search Engine" />
+	<meta property="og:type" content="article" />
+	<meta property="og:description" content="Download free movies,tv shows, adult xxx videos, games, software, apps, ebooks, Hd movies torrents." />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="Free Download" />
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Best File Search Engine">
+	<meta name="twitter:description" content="Free Download">
+	<meta name="twitter:url" content="">
+    
+	<meta name="theme-color" content="#3B5998">
+	<!--site specific all styles-->
+	<style>
+	  :root {
+		  --main-theme-color: #3B5998;		}
+	</style>
+	<!--link rel="stylesheet" href="//storage.googleapis.com/boysofts.appspot.com/file-search-engine/assets/css/styles.css"-->
+	<link rel="stylesheet" href="//storage.googleapis.com/boysofts.appspot.com/file-search-engine/assets/css/styles.min.css">
+	
+	
+	  </head>
+		<script>
+			/*
+			 url_pattern: ['static', 'params'], 
+			 'static': for surge.sh hosting or php with mode_rewrite enabled hosting or github pages with cloudflare proxy.
+			 'params': for github pages without cloudflare proxy or anywhere.
+			 */
+			var url_pattern = 'params'; //options: 'static', 'params'.
+				
+			
+			//number of links per site maps pages
+			var site_maps_link_count = 500;			
+		</script>
+		
+		
+
+<body>
+<div id="page-container">
+  <div id="content-wrap">
+	<header class="header">
+	  <a href="" class="logo" id="logo" data-link>&#128640; search</a>
+	  <input class="menu-btn" type="checkbox" id="menu-btn" />
+	  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>	  
+	</header>
+<br/><br/>
+	<div id="main">      
+		
+		<br/>	
+	  <div class="inner center" id="search-form">  
+		  <form action="" method="get" onsubmit="event.preventDefault();do_search(this.q.value)" class="card table-caption" style="width:750px;padding:10px;margin-bottom:15px;">
+			<div class="search">
+			<input type="search" class="searchTerm" placeholder="Search..." id="q" name="q" value="" pattern=".{3,}" required title="3 characters minimum">
+			<input type="hidden" value="1" name="search">
+			<button type="submit" class="searchButton" ></button>
+			</div>
+		  </form> 
+	  </div>  
+	  
+	 <div class="inner center loader" id="search-query-caption-container"> <br/><br/><br/><br/><br/><br/>      
+		  <b class="table-caption" id="search-query-caption"></b>
+	 </div>
+	 <!--
+	Searching for "<span id="search-query"><span>"...
+	Search: "" [<span id="result-count"></span> Results]
+	-->
+	 <div class="inner center loader" id="progressbar-loader">	  
+			<div class="progressbar1">
+			  <div class="progressbarfill" id="progressbarfill-event"></div>
+			</div>	  
+	 </div> 
+	 
+	  <div class="inner center" id="search_res_table" style="display:none;">
+		<table class="rtable">
+		  <caption class="table-caption" id="search-table-caption"></caption>
+		  <thead>
+			<tr  >
+			  <th>File Name</th>		  
+			  <th>Size</th>
+			  <th>Category</th>
+			  <th>Host</th>
+			</tr>
+		  </thead>
+			  <tbody id="res_data_rendered" >
+			   <!--search results table goes here-->
+			   	   
+			  </tbody>
+		</table>    
+	  </div>
+	  <br/>
+	  
+			<div class="inner center">
+			  <div id="container">
+				<div class="pagination" id="paginations">	
+                 <!--pagination links goes here-->				
+				</div>
+			  </div>
+			</div>				  
+	</div>
+
+<!--individual file info views start-->
+<div class="inner center" id="file" style="display:none;">
+  
+    <div id="detailsouterframe">
+	<div id="response"></div>
+	<div id="message"></div>
+	<div id="detailsframe">
+	<div id="title"></div>
+
+    <div id="details">
+        <dl class="col1">		
+		
+			<dt>Size:</dt>
+			<dd id="size"></dd>
+			
+			<dt>Extension:</dt>
+			<dd id="ext"></dd>
+			
+			<dt>Category:</dt>
+			<dd id="cat"></dd>
+			
+			<dt>Tags:</dt>
+			<dd id="tag-links"></dd>
+            
+			<dt>QR Code:</dt>
+			<style>
+				#details dd img {
+					width: 128px;
+					height: 128px;
+					margin-top: 10px;
+				}
+			</style>
+			<dd id="qrcode"></dd>
+			
+			
+			<!--dt>Language(s):</dt>
+			<dd>English</dd-->        
+                
+        </dl>
+		
+		<dl class="col2"><dt>Added on:</dt>
+            <dd id="time-stamp"></dd>
+			
+			<!--will be added soon-->
+            <!--dt>Shared By:</dt>
+            <dd>{{file_owner}}</dd-->			
+			
+			<dt>File Host:</dt>
+		    <dd id="host"></dd> 
+			
+			<dt>Views:</dt>
+		    <dd id="views"></dd>
+			
+			<dt>Link:</dt>
+		    <dd style="font-size:12px;" id="link-preview"></dd> 
+             
+			<dt>Share:</dt>
+		    <dd ></dd>
+			
+			<br><br>
+		   <div id="social">
+			  <div style="float:right;"><div class="addthis_inline_share_toolbox"></div></div>
+		   </div>
+          			
+			
+        </dl>
+		
+		<div id="CommentDiv" style="display:none;">
+		 
+			
+         <!--span><b style="font-size:15px;font-weight:bold;color:#7B563A;margin-right:60px;"></b><span id="views1"></span></span><br/-->
+         <!--span style="font-size:12px;" id="link-preview"></span><br/><br/-->
+        </div>
+		
+       
+	   <!--div id="social">
+	      <div style="float:right;"><div class="addthis_inline_share_toolbox"></div></div><br/><br/>
+       </div-->
+       
+	   <style>@media only screen and (max-width: 600px) {.host-info .download {padding-top:1px; padding-right:80px;}}</style>
+	   <style>@media only screen and (min-width: 400px) {.host-info .download {padding-top:1px; padding-right:100px;}}</style>
+	   
+	   <div style="padding-top:260px;" class="host-info">	   
+			<div class="download center">
+                <!--Don't remove "dl_link" and "data-src" from below link, search SDK required this.-->			
+				<a href="#" class="buttonDownload" rel="nofollow" target="_blank" id="dl_link" data-src="">Download</a>
+			</div>		
+		    
+			<!--related keywords suggestions-->
+			<div class="nfo" >
+			    <!--related-keyword-suggestions here-->
+				<pre id="related-keyword-suggestions" style="white-space: pre-wrap;"></pre>
+			</div>
+			
+			<!--host info-->
+			<div class="nfo" >
+				<pre id="desc" style="white-space: pre-wrap;"><!--host info goes here--></pre>
+			</div>
+			
+			
+		
+			<!--div class="descriptions" id="desc-div">
+				<pre ></pre>
+			</div-->
+		
+            <br>
+            <div id="comments"></div>            
+            <div class="center"><!--paste bottom ad code here-->
+            <img class="card" src="//storage.googleapis.com/boysofts.appspot.com/file-search-engine/sample_ads/320x50.png" /></div>                        
+		 </div>
+        </div>
+    </div>
+	
+    </div>	
+	
+  </div>
+    
+	<br/>
+
+<div class="inner center" id="related-files" style="display:none;">
+    <table class="rtable">
+		  <caption class="table-caption">Related Files</caption>
+	  <thead>
+		<tr>
+		  <th>File Name</th>		  
+		  <th>Size</th>
+		  <th>Category</th>
+		  <th>Host</th>
+		</tr>
+	  </thead>
+		  <tbody id="related-files-data"></tbody>	  
+	</table>
+
+  </div>
+  
+  <br/><br/>
+ 
+<div class="inner center" id="recent-files" style="display:none;">
+    <table class="rtable">
+		  <caption class="table-caption">Recent Files</caption>
+	  <thead>
+		<tr>
+		  <th>File Name</th>		  
+		  <th>Size</td>
+		  <th>Category</th>
+		  <th>Host</th>
+		</tr>
+	  </thead>
+		  <tbody id="recent-files-data"></tbody>	  
+	</table>
+
+  </div> 
+  
+<!--modal start-->
+<div class="inner center">
+	<div id="open-modal" class="modal-window">
+	  <div>
+		<a href="#modal-close" title="Close" class="modal-close topX" id="modal-close">X</a>
+		<h1 id="modal_title" style="text-transform: capitalize;">Modal Title</h1>
+		<div id="modal_body">Loading...</div>
+		<div class="modal_btn_container"><a href="#modal-close" class="modal-close modal_btn" id="modal-close">Close</a></div>
+		</div>
+	</div>
+</div>
+
+<div class="inner center" >
+	<pre id="site-maps"></pre>
+	 
+</div>
+	 
+<!--scroll to top -->
+<button onclick="topFunction()" id="scrollToTop" title="Go to top">&#8682;</button>
+<footer class="footer">
+  <div class="footer__addr">
+    <h1 class="footer__logo">Free Download</h1>
+        
+    <h2><b>Contact: <a href="#open-modal" onclick="open_modal('contact');">Contact</a></b></h2>
+    
+    <address>
+      New York, United States of America<br>
+          
+      <a class="footer__btn" href="#open-modal" onclick="open_modal('contact');">&#128231; Email Us</a>
+    </address>
+  </div>
+  
+  <ul class="footer__nav">
+    <li class="nav__item">
+      <h2 class="nav__title">Main</h2>
+
+      <ul class="nav__ul">
+        <li>
+          <a href="https://www.1111110.xyz/">&#127968; Home</a>
+        </li>
+
+        <li>
+          <a href="#" onclick="window.print();">&#9113; Print</a>
+        </li>
+		
+		<li>
+          <a href="https://www.1111110.xyz/">&#128195; Pages</a>
+        </li>
+        
+            
+        <li>
+          <a href='?sitemap=1&start=0'>&#128225; Site Maps</a>
+        </li>
+      </ul>
+    </li>
+    
+    <!--li class="nav__item nav__item--extra">
+      <h2 class="nav__title">Technology</h2>
+      
+      <ul class="nav__ul nav__ul--extra">
+        <li>
+          <a href="#">Hardware Design</a>
+        </li>
+        
+        <li>
+          <a href="#">Software Design</a>
+        </li>
+        
+        <li>
+          <a href="#">Digital Signage</a>
+        </li>
+        
+        
+      </ul>
+    </li-->
+	
+	<li class="nav__item">
+      <h2 class="nav__title">Information</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#open-modal" onclick="open_modal('terms');">&#128195; Terms & Conditions</a>
+        </li>
+        
+        <li>
+          <a href="#open-modal" onclick="open_modal('privacy');">&#128195; Privacy Policy</a>
+        </li>
+        
+        <li>
+          <a href="#open-modal" onclick="open_modal('dmca');">&#128195; DMCA</a>
+        </li>
+		
+		<li>
+          <a href="#open-modal" onclick="open_modal('2257');">&#128195; 2257 Statement</a>
+        </li>
+      </ul>
+    </li>
+	
+	<li class="nav__item">
+      <h2 class="nav__title">&#129309; Partners</h2>
+      
+      <ul class="nav__ul">
+        
+        <li>
+          <a href="https://www.zippyshare.com/" target="_blank">zippyshare.com</a>
+        </li>
+        
+        <li>
+          <a href="https://k2s.cc/" target="_blank">k2s.cc</a>
+        </li>
+		
+		<li>
+          <a href="https://www.google.com/intl/en_in/drive/" target="_blank">Google Drive</a>
+        </li>
+		
+		<li>
+          <a href="http://www.solidfiles.com/" target="_blank">solidfiles.com</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="nav__item">
+      <h2 class="nav__title">Support</h2>
+      
+      <ul class="nav__ul">
+        <li>
+          <a href="#open-modal" onclick="open_modal('contact');">&phone; Contact Us</a>
+        </li>
+		
+		<li>
+          <a href="#open-modal" onclick="open_modal('about');">&#128195; About</a>
+        </li>
+        
+        <li>
+          <a href="#open-modal" onclick="open_modal('feed back');">&#128231; Give Feedback</a>
+        </li>
+        
+      </ul>
+    </li>
+  </ul>
+  
+  
+  <div class="legal">
+    <p>&copy; <script>document.write(new Date().getFullYear());</script>
+	<!-- Hy buddy don't delete this link, your site will stop getting torrents-->
+	by <a href="https://www.1111110.xyz/" target="_blank">Sk Md Imtiaj</a>. 
+	Ver:1.0. &#128336; <span id="exe-time">0.00</span> sec. </p>
+    
+    <div class="legal__links">
+      <span>Made with <span class="heart">&#9829;</span> on planet earth.</span><br/>
+    </div>
+  </div>
+</footer>
+
+
+<!--paste Google analytics or any other code here-->
+  
+ 
+
+ </div>
+</div>
+
+</body>
+</html>
+
+<script>
+	
+	
+	
+	//window-load-functions.js start	
+	var site_url = get_site_base_url(window.location.href);
+	/*
+	if(url_pattern == 'static' && site_url == ''){
+			  (function(){
+			   site_url_blank_notice = '<b style="color:red;position:fixed; top:50%;left:20%;font-size:20px;text-align:center;">Javascript variable "site_url" value must not blank when "url_pattern" value is "static".</b>';
+			   //document.write();
+			   document.querySelector('body').innerHTML = site_url_blank_notice;
+			   })();
+			}
+	*/		
+	var query_string = '';
+	//set site url for use in sdk
+	setCookie1('site_url', site_url, 1);
+	//change logo link to site_url
+    document.getElementById("logo").href = site_url;
+	window.addEventListener('load', function() {
+		//window onload functions goes here.
+	});
+	//window-load-functions.js end   
+   //init-settings.js start
+      var fileid, gid;
+			var page_no = 0;
+			
+			var base_file_download_url = "https://files.1111110.xyz/api/file.php";
+			var total_pages_count_api_url = 'https://file-search-engine.1111110.xyz/api/total-pages-count.json';
+			var file_store_base_url = 'https://file-store.1111110.xyz/file/imtiaj/file-search-engine-json/';
+			var hosts_info_base_url = 'https://file-store.1111110.xyz/file/imtiaj/hosts_info.csv';
+			
+
+			
+			//load inhouse css style.css if not loaded.
+			
+			function loadCSSIfNotAlreadyLoadedForSomeReason () {
+				var ss = document.styleSheets;
+				if(ss.length>0){
+					for (var i = 0; i < ss.length; i++) {
+						if (ss[i].href && ss[i].href.endsWith("styles.css") ){
+							return;
+						}
+					}
+				}
+				var link = document.createElement("link");
+				link.rel = "stylesheet";
+				link.href = site_url + "css/styles.css";
+				document.getElementsByTagName("head")[0].appendChild(link);
+			}
+			loadCSSIfNotAlreadyLoadedForSomeReason();
+			
+			
+			   //init-settings.js end
+
+    //data-array.js start
+	var category_arr = {'0':'Movie/Videos','1':'Music/Audios','2':'eBook/Documents','3':'Photo/Images','4':'Software/Applications', '5':'Archive/Files'};
+    //data-array.js end
+	
+	//util-functions-lib.js start
+	function getQueryStringValue1 (key) {  
+	  return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+	}
+
+	function getQueryStringValuefromString1 (str, key) {  
+	  return decodeURIComponent(str.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));  
+	}
+
+	function shuffle(array) {
+	  array.sort(() => Math.random() - 0.5);
+	}
+
+	//https://stackoverflow.com/questions/1960473/get-all-unique-values-in-a-javascript-array-remove-duplicates
+	function onlyUnique(value, index, self) {
+	  value = value.toLowerCase();
+	  return self.indexOf(value) === index;
+	}
+
+	function array_unique(array){
+	   var unique = array.filter(onlyUnique);
+	   return unique;
+	}
+
+	function slugify(text)
+	{
+	  return text.toString().toLowerCase()
+		.replace(/\s+/g, '-')           // Replace spaces with -
+		.replace(/[^\w\-]+/g, '-')       // Remove all non-word chars
+		.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+		.replace(/^-+/, '')             // Trim - from start of text
+		.replace(/-+$/, '');            // Trim - from end of text
+	}
+
+	function setCookie1(cname, cvalue, exdays) {
+	  var d = new Date();
+	  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+	  var expires = "expires="+d.toUTCString();
+	  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+	}
+
+
+	function millisToMinutesAndSeconds(millis) {
+	  var minutes = Math.floor(millis / 60000);
+	  var seconds = ((millis % 60000) / 1000).toFixed(0);
+	  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+	}
+
+	function hashCode(str) {
+		var hash = 0;
+		if (str.length == 0) {
+			return hash;
+		}
+		for (var i = 0; i < str.length; i++) {
+			var char = str.charCodeAt(i);
+			hash = ((hash<<5)-hash)+char;
+			hash = hash & hash; // Convert to 32bit integer
+		}
+		hash = Math.abs(hash); //remove negitive
+		return hash;
+	}
+
+	function get_file_name(url){
+	   return url.split("/").pop()
+	}
+	//util-functions-lib.js end
+	
+
+    //user-defined-functions.js start
+	function get_site_base_url(url){
+	   var base_url = url.split(/[?#]/)['0']; /*strip params and fragments*/
+	   base_url  = base_url.replace(/index\.(php|htm|html|js|jsp|java|md|asp)/g, '');
+	   base_url  = base_url.replace(/file\/(.*?)-gid-(.*?)-fileid-(.*?)\.html?$/g, '');		/*strip file url part*/	
+	   base_url  = base_url.replace(/page\/(\d+)\.html?$/g, ''); /*strip pagination url part*/
+	   return base_url;
+	}
+	
+	function tags2links(el){
+		//tags = document.getElementsByTagName(el);
+		tags = document.getElementsByClassName('tag');
+
+		for (i = 0; i < tags.length; i++) {
+		  tag = tags[i].innerHTML;
+		  tag = tag.trim();
+		  tags[i].innerHTML = `<a href="${site_url}#search?q=${tag}">${tag}</a>`;
+		  tags[i].setAttribute('onclick' , `event.preventDefault();do_search('${tag}');`);
+		  
+		}
+	}
+
+	function get_local_storage(url){
+		file_name = get_file_name(url);
+		hid = hashCode(file_name);
+		if($store_data = localStorage.getItem(hid)) {
+			return $store_data;
+		}
+		else{ return false; }
+	}
+
+	function set_local_storage(url, res_data){
+		file_name = get_file_name(url); //key is an url
+		hid = hashCode(file_name);
+		localStorage.setItem(hid, res_data);
+	}
+
+
+	function scrollToFile() {
+	  //document.getElementById("main").scrollIntoView();
+	  document.documentElement.scrollTop = 0;
+	}
+
+	function attachLinksToScroll(){
+		links = document.getElementsByClassName('links');
+
+		for (i = 0; i < links.length; i++) {  
+		  links[i].onclick  = scrollToFile;  
+		}
+	}
+	//user-defined-functions.js end
+
+
+    //json-render-functions.js start
+	var render_file_description = function(res_data){
+			
+		//file_description_json_data = xhttp.responseText;
+		
+		json_data = JSON.parse(res_data);
+		
+		
+		
+		var current_item_index;
+		for (i = 0; i < json_data.length; i++) {
+		   fid1 = json_data[i].fid;
+		   if(fid1 == fileid) { 
+		      file_info = json_data[i]; 
+			  current_item_index = i;
+			  }
+		}
+		
+		file_info = file_info;
+		
+		
+		//pick items depending on domain hash for seo
+		json_data = pick_items(json_data);
+		
+		
+		//removing current item from all items
+		json_data.splice(current_item_index, 1);
+
+		related_items = json_data;
+		
+		//randomly pick only 10 items
+		shuffle(related_items);
+		related_items = related_items.slice(0, 10);
+		
+		title = file_info['title'];
+		uid = file_info['uid'];
+		gid = file_info['gid'];
+		size = file_info['size'];
+		if(size.length == 0) {size = "-";}
+		ext = file_info['ext'];
+		if(ext.length == 0) {ext = "-";}
+		
+		keywords = file_info['keywords'];
+		keywords = keywords.split(',');
+		keywords_links = '';
+		for (j = 0; j < keywords.length; j++) {
+		   keyword = keywords[j];
+		   keywords_links = keywords_links + `<span class=\"tag\">${keyword}</span>, `;
+		}	
+		keywords_links = keywords_links.trim();
+		keywords_links = keywords_links.replace(/,+$/, '');  /*javascript do not have rtrim function*/
+		tag_links = keywords_links;//file_info['keywords_links'];
+		
+		link_preview = file_info['link_preview'];
+		domain = link_preview.match("<b>(.*)</b>");
+		domain = domain[1];		
+		if(domain == 'google.com') { domain = 'Google Drive'; }
+		host_name = domain;
+		
+		//timestamp = Math.floor(Math.random() * 10) + 1 + ' days ago.'; //file_info['timestamp'];
+		timestamp =  hashCode(fileid).toString().split('').pop()  + ' days ago.';
+		
+		//views = Math.floor(Math.random() * 10000); //file_info['views'];
+		views = hashCode(fileid).toString().split('').slice(0, 4).join('');
+		
+		download_link = `?uid=${uid}` ; //file_info['download_link'];
+		download_link = base_file_download_url + download_link;
+		
+		category_no = file_info['category'];
+		category = category_arr[category_no];
+		
+		//unique title
+		unique_title = create_title(file_info);
+		
+		//update seo meta tags
+		update_seo_meta_tags(file_info);
+		
+		
+		documentTitle = `${unique_title} - Free Download.`;
+		documentTitle = documentTitle.replaceAll('_', ' ').replaceAll('-', ' ').trim();
+		document.title = documentTitle;		
+		
+		
+		document.getElementById("title").innerHTML = title;
+		document.getElementById("size").innerHTML = size;
+		document.getElementById("ext").innerHTML = ext;
+		document.getElementById("cat").innerHTML = category;
+		document.getElementById("tag-links").innerHTML = tag_links;
+		document.getElementById("host").innerHTML = domain;
+		document.getElementById("time-stamp").innerHTML = timestamp;
+		document.getElementById("views").innerHTML = views;
+		document.getElementById("link-preview").innerHTML = link_preview;
+		//document.getElementById("dl_link").setAttribute('data-src', download_link);  //verify this
+		dl_link = document.getElementById("dl_link");
+		//dl_link.href = base_file_download_url + base64_decode(reverse_str(download_link));  //verify this
+		dl_link.href = download_link;  //verify this	
+		
+		
+		document.getElementById("file").style.display = '';
+		
+		site_url_de = decodeURIComponent(site_url);
+		
+		related_items_tbl_tmpl = '';		
+		for (i = 0; i < related_items.length; i++) {
+		  title = related_items[i].title;
+		  fid = related_items[i].fid;
+		  //gid = related_items[i].gid; //gid for all files in this group is same, we got one above.
+		  size = related_items[i].size;
+		  //keywords = related_items[i].keywords;
+		  category_no = related_items[i].category;
+		  category = category_arr[category_no];
+		  link_preview = related_items[i].link_preview;
+		  domain = link_preview.match("<b>(.*)</b>");
+		  domain = domain[1];
+		  if(domain == 'google.com') { domain = 'Google Drive'; }
+		  unique_title = create_title(related_items[i]);
+		  sluz = slugify(unique_title);
+		  
+		  
+		  if(url_pattern == 'static'){
+			  var file_url = `${site_url_de}file/${sluz}-gid-${gid}-fileid-${fid}.html`;
+			  var gid_link = `${site_url_de}/page/`;
+		  }
+		  else if(url_pattern == 'params'){
+			  var file_url = `${site_url_de}?title=${sluz}&gid=${gid}&fileid=${fid}`;
+		  }
+		  
+		  related_items_tbl_tmpl = related_items_tbl_tmpl + `
+		  <tr>
+				  <td><a href="${file_url}" class="links" data-link>${title}</a></td>
+				  <td>${size}</td>
+				  <td>${category}</td>
+				  <td>${domain}</td>
+				</tr>`;	
+		}
+		
+		if(url_pattern == 'static'){
+			  var gid_link = `${site_url_de}page/${gid}.html`;
+		  }
+		  else if(url_pattern == 'params'){
+			  var gid_link = `${site_url_de}?page=${gid}`;
+		  }
+		  
+		related_items_tbl_tmpl = related_items_tbl_tmpl + `<tfoot><tr><td></td><td></td><td></td><td><a href="${gid_link}" class='page links' data-link style="color: var(--main-theme-color);font-weight: bold;">All related files &#129094;</a></td></tr></tfoot>`;
+		
+		//gen description
+		/*
+		shuffle(related_items)
+		desc_txt = '';
+		for (i = 0; i < 12; i++) {
+		   title = related_items[i].title;
+		   desc_txt = desc_txt + title + "\n";
+		}
+		desc_txt = desc_txt.split(' ')
+		desc_txt = array_unique(desc_txt)
+		desc_txt = desc_txt.join(' ')
+		//console.log(desc_txt);
+        */
+        //genarate and insert description from host info csv	
+		genaarte_insert_hostinfo_csv(hosts_info_base_url, host_name)
+		//document.getElementById("desc-div").style.display = '';
+		//document.getElementById("desc").innerHTML = desc_txt;	
+		
+		//genarate and insert related keywords suggestions
+		insert_related_keywords_suggestions(keywords);
+		
+		//genarate and insert qr code
+		gen_insert_qr_code(download_link, 'qrcode');
+		
+		document.getElementById("related-files-data").innerHTML = related_items_tbl_tmpl;
+		document.getElementById("related-files").style.display = '';
+        
+        		
+		
+		attachLinksToScroll();
+		tags2links('tag');
+		hide_page_loader();	
+		
+		//now insert addthis widget
+        insert_addthis_widget();
+		
+	}
+		
+		
+		
+		
+		
+		
+	var render_pages_results = function(res_data){
+		
+		
+		//file_search_result_json_data = xhttp.responseText;
+		json_data = JSON.parse(res_data);
+		
+        
+		//pick items depending on domain hash for seo
+		json_data = pick_items(json_data);
+		
+		site_url_de = decodeURIComponent(site_url);
+		
+		search_tbl_tmpl = '';
+		for (i = 0; i < json_data.length; i++) {
+		  title = json_data[i].title;
+		  fid = json_data[i].fid;
+		  gid = json_data[i].gid;
+		  size = json_data[i].size;
+		  //keywords = json_data[i].keywords;
+		  category_no = json_data[i].category;
+		  category = category_arr[category_no];
+		  link_preview = json_data[i].link_preview;
+		  domain = link_preview.match("<b>(.*)</b>");
+		  domain = domain[1];
+		  if(domain == 'google.com') { domain = 'Google Drive'; }
+		  unique_title = create_title(json_data[i]);
+		  sluz = slugify(unique_title);
+		  
+		  
+		  
+		  if(url_pattern == 'static'){
+			  var file_url = `${site_url_de}file/${sluz}-gid-${gid}-fileid-${fid}.html`;
+		  }
+		  else if(url_pattern == 'params'){
+			  var file_url = `${site_url_de}?title=${sluz}&gid=${gid}&fileid=${fid}`;
+		  }
+		  
+		  search_tbl_tmpl = search_tbl_tmpl + `
+		  <tr>
+				  <td><a href="${file_url}" class="links" data-link>${title}</a></td>
+				  <td>${size}</td>
+				  <td>${category}</td>
+				  <td>${domain}</td>
+				</tr>`;
+		}
+
+		document.getElementById("search-table-caption").innerHTML = 'Page no: ' + gid + ', Total Results: ' + json_data.length + '.';
+
+		document.getElementById("res_data_rendered").innerHTML = '';
+		document.getElementById("res_data_rendered").innerHTML = search_tbl_tmpl;
+		document.getElementById("search_res_table").style.display = '';
+        
+		/*
+		var t1 = performance.now();
+		time_diff = (t1 - t0);
+		exe_time = millisToMinutesAndSeconds(time_diff);
+		console.log("Results generated in: " + exe_time + " seconds.");
+		document.getElementById("exe-time").innerHTML = exe_time;
+		*/
+		
+		/*hide file info page if user back form it*/
+		document.getElementById("related-files").style.display = 'none';
+		document.getElementById("file").style.display = 'none';		
+	}
+	
+	
+	var render_search_results = function(res_data, query){
+        		
+		//file_search_result_json_data = xhttp.responseText;
+		try{
+		  json_data = JSON.parse(res_data);
+        }
+		catch(err) { alert('Something went wrong! Please try different search.'); return false;}
+		
+		
+		site_url_de = decodeURIComponent(site_url);
+		
+		search_tbl_tmpl = '';
+		for (i = 0; i < json_data.length; i++) {
+		  title = json_data[i].title;
+		  fid = json_data[i].fid;
+		  gid = json_data[i].gid;
+		  size = json_data[i].size;
+		  //keywords = json_data[i].keywords;
+		  category_no = json_data[i].category;
+		  category = category_arr[category_no];
+		  link_preview = json_data[i].link_preview;
+		  domain = link_preview.match("<b>(.*)</b>");
+		  domain = domain[1];
+		  if(domain == 'google.com') { domain = 'Google Drive'; }
+		  
+		  unique_title = create_title(json_data[i]);
+		  sluz = slugify(unique_title);
+		  
+		  
+		  if(url_pattern == 'static'){
+			  var file_url = `${site_url_de}file/${sluz}-gid-${gid}-fileid-${fid}.html`;
+		  }
+		  else if(url_pattern == 'params'){
+			  var file_url = `${site_url_de}?title=${sluz}&gid=${gid}&fileid=${fid}`;
+		  }
+		  
+		  search_tbl_tmpl = search_tbl_tmpl + `
+		  <tr>
+				  <td><a href="${file_url}" class="links" data-link>${title}</a></td>
+				  <td>${size}</td>
+				  <td>${category}</td>
+				  <td>${domain}</td>
+				</tr>`;
+		}
+    
+	search_results_count = json_data.length;
+	document.getElementById("search-table-caption").innerHTML = `Search Results for: '${query_string}' [${search_results_count}].`;
+
+		
+		document.getElementById("res_data_rendered").innerHTML = search_tbl_tmpl;
+		document.getElementById("search_res_table").style.display = '';
+		
+		hide_page_loader();
+		
+        
+		/*
+		var t1 = performance.now();
+		time_diff = (t1 - t0);
+		exe_time = millisToMinutesAndSeconds(time_diff);
+		console.log("Results generated in: " + exe_time + " seconds.");
+		document.getElementById("exe-time").innerHTML = exe_time;
+		*/
+		
+		/*hide file info page if user back form it*/
+		document.getElementById("related-files").style.display = 'none';
+		document.getElementById("file").style.display = 'none';	
+        
+        //run previously paused default progress animatin again
+		//document.getElementById("progressbarfill-event").classList.add("progressbarfill");		
+	}
+	
+	//json-render-functions.js end
+	
+	
+	
+	//create-unique-contents-for-seo.js start
+	//update seo meta tags
+	function update_seo_meta_tags(item){
+		var unique_title = create_title(item);
+		unique_title = unique_title.replaceAll('_', ' ').replaceAll('-', ' ').trim();
+		
+		var keywords = item.keywords;
+		document.querySelector('meta[name="description"]').setAttribute('content', unique_title);
+		document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
+	}
+
+	//pick items depending on domain hash
+	function pick_items(items){
+		domain_origin = location.host;
+		hash  = hashCode(domain_origin);
+		hash_array = hash.toString().split('');
+		//take anly 5 items
+		hash_array = hash_array.slice(0, 5);
+		
+		if(items.length <30) { return items; }
+		
+		rand_items = [];
+		for (i = 0; i < items.length; i++) {
+			var counter_last_digit = i.toString().split('').pop();
+			if( hash_array.includes(counter_last_digit) ){		   
+			   rand_items.push(items[i]);
+			  }
+		}
+		
+		return rand_items;
+	}
+
+	function create_title(item){
+		//console.log(item);
+		//extract item data
+		var title = item.title;
+		var category_no = item.category;
+		var category = category_arr[category_no];
+		category = category.replace('/', ' and ')
+		var size = item.size;
+		var link_preview = item.link_preview;
+		var host = link_preview.match("<b>(.*)</b>");
+		var hostname = host[1];
+		if(hostname == 'google.com') { hostname = 'Google Drive'; }
+		hostname = hostname.replace('.', '-')
+		
+		domain_origin = location.host;
+		hash  = hashCode(domain_origin);
+		hash_array = hash.toString().split('');
+		//take anly 5 items
+		hash_array = hash_array.slice(0, 5);
+		
+		var hash_last_digit = hash.toString().split('').pop();
+		
+		//title page logic
+		var unique_title;
+		
+		if(hash_last_digit==0 ){
+		  unique_title = `${hostname} ${category} _${title}_ ${size}`;
+		}
+		else if(hash_last_digit==1){
+		  unique_title = `${category} _${title}_ ${size}`;
+		}else if(hash_last_digit==2){
+		  unique_title = `_${title}_ ${category} ${size}`;
+		}else if(hash_last_digit==3){
+		  unique_title = `${hostname} _${title}_ ${size}`;
+		}else if(hash_last_digit==4){
+		  unique_title = `${hostname} _${title}_ ${category}`;
+		}else if(hash_last_digit==5){
+		  unique_title = `_${title}_ ${hostname} ${category}`;
+		}else if(hash_last_digit==6){
+		  unique_title = `_${title}_ ${hostname} ${size}`;
+		}else if(hash_last_digit==7){
+		  unique_title = `${category} ${hostname} _${title}_`;
+		}else if(hash_last_digit==8){
+		  unique_title = `${hostname} ${category} _${title}_`;
+		}else if(hash_last_digit==9){
+		  unique_title = `${category} ${hostname} _${title}_ ${size}`;
+		}
+		
+		return unique_title;
+	}
+	
+	//create-unique-contents-for-seo.js end
+	
+	
+
+	//hosts-info-csv-functions.js start
+	function genaarte_insert_hostinfo_csv(hosts_info_base_url, host_name){
+		if( $store_data = get_local_storage('hosts_info.csv') ) {
+			desc_txt = parse_hosts_info_from_csv($store_data, host_name);
+            document.getElementById("desc").innerHTML = desc_txt;			
+		}
+		else{
+			fetchCsv(hosts_info_base_url, host_name);
+		}
+	}
+	
+	
+	function fetchCsv(hosts_info_base_url, host_name) {
+	  const xhttp = new XMLHttpRequest();
+	  xhttp.onload = function() {    
+		res_data = xhttp.responseText;
+		//set local storage value
+		set_local_storage('hosts_info.csv', res_data);
+		desc_txt = parse_hosts_info_from_csv(res_data, host_name);
+		document.getElementById("desc").innerHTML = desc_txt;			
+
+	  }
+	  xhttp.open("GET", hosts_info_base_url);
+	  xhttp.send();
+	}
+	
+	function csvJSON(csv, delimiter){
+
+	  var lines=csv.split("\n");
+
+	  var result = [];
+
+	  //delimiter is "|", because there are "," in many fields.
+	  var headers=lines[0].split(delimiter);
+
+	  for(var i=1;i<lines.length;i++){
+
+		  var obj = {};
+		  var currentline=lines[i].split(delimiter);
+
+		  for(var j=0;j<headers.length;j++){
+			  obj[headers[j]] = currentline[j];
+		  }
+
+		  result.push(obj);
+	  }
+	  
+	//return result; //JavaScript object
+	  return JSON.stringify(result); //JSON
+    }
+	
+	function validURL(str) {
+	  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+		'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+		'((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+		'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+		'(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+		'(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+	  return !!pattern.test(str);
+	}
+
+
+
+	function setHttp(link) {
+		if (link.search(/^http[s]?\:\/\//) == -1) {
+			link = 'http://' + link;
+		}
+		return link;
+	}
+
+	function get_item_from_array(array, key, value){
+		for (i = 0; i < array.length; i++) {		
+			item = array[i];
+			if(item[key] == value) {return item;}
+		}
+	}
+    
+	
+	function capitalizeFirstLetter(string) {
+	  return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	
+	
+    function parse_hosts_info_from_csv(csv_data, host_name){
+		csv_array = csvJSON(csv_data, '|');
+		json_array = JSON.parse(csv_array);
+		//console.log(json_array.length);
+		item_data = get_item_from_array(json_array, 'name', host_name);
+		//console.log(item_data['name']);
+		//console.log(item_data);
+		//console.log(item_data.length);
+
+		var file_host_info = '<h3>Host Info:</h3>';
+		for( var key in item_data ) {
+		  var value = item_data[key];
+		  values = value.split(','); 
+		  value_edit = '';
+		  for (i = 0; i < values.length; i++) { 
+			each_value = values[i];
+			each_value = each_value.trim();	
+			if(validURL(each_value)) { 
+			  each_value_http = setHttp(each_value); 
+			  //https://stackoverflow.com/questions/8206269/how-to-remove-http-from-a-url-in-javascript
+			  //each_value_http_removed = each_value_http.replace(/(^\w+:|^)\/\//, '');
+			  each_value_http_removed = each_value_http.replace(/(^\w+:|^)\/\/?(?:www\.)?/i, "");
+			  value_edit = value_edit + `<a href="${each_value_http}" target="_blank">${each_value_http_removed}</a>, `;
+			  }else{
+				  value_edit = value_edit + each_value + ', '; 
+			  }
+		  }
+		  //https://stackoverflow.com/questions/17720264/remove-last-comma-from-a-string //This will remove the last comma and any whitespace after it:
+		  final_value = value_edit.replace(/,\s*$/, "");  
+		  
+		  key = key.trim();
+		  key = capitalizeFirstLetter(key);
+		  final_value = capitalizeFirstLetter(final_value);
+		  file_host_info = file_host_info + `<b>${key}:</b> ${final_value}\n`;
+		  //console.log(key + ' ' + value);
+        }
+		
+		return file_host_info +'<h3></h3>';
+
+	}
+	//hosts-info-csv-functions.js end
+	
+	   
+   
+   //related-keywords-suggestion-functions.js start
+   var suggest_urls = ['https://www.google.com/complete/search?client=opera&q=%s',
+	'https://ac.duckduckgo.com/ac/?q=%s&type=list',
+	'https://www.bing.com/osjson.aspx?query=%s',
+	'https://ac.ecosia.org/autocomplete?q=%s&type=list'];
+
+	var suggest_urls = ['https://ac.ecosia.org/autocomplete?q=%s&type=list'];
+	
+	function insert_related_keywords_suggestions(keywords){
+		//first remove previous pages suggestions (if any)
+		document.querySelector("#related-keyword-suggestions").innerHTML = '<h3>Related Keywords Suggestions:</h3>';
+		for (i = 0; i < suggest_urls.length; i++) {
+			for(key in keywords){
+			  suggest_url = suggest_urls[i].replace('%s', keywords[key])
+			
+			  fetch_data(suggest_url);
+			}
+			//console.log(suggest_urls[i], keyword);
+		}
+	}
+	
+	function fetch_data(url){
+	  try{
+		fetch(url)
+		  .then(response => response.json())
+		  .then(data => get_all_keywords(data));
+	  }
+	  catch(err){}
+	}
+	
+	
+	function get_all_keywords(json_data){
+		//jd = JSON.parse(json_data); //no need to parse json, because fetch is providing json format
+		var suggestions = json_data[1];
+		var all_strings = '';
+		for(obj in suggestions){
+			 all_strings = all_strings + suggestions[obj] + ' ';
+			
+		}
+		var all_phrase = all_strings.split(' ');
+		//removing 2 char words
+		all_phrase = all_phrase.filter(word => word.length > 2);
+		//console.log(all_phrase);
+		var unique = array_unique(all_phrase);
+		var unique_suggestion_str = unique.join(', ').trim().trim(',');
+		
+		var rand1 = get_random_warez_keywords(2).join(', ');
+		var rand2 = get_random_warez_keywords(2).join(', ');
+		
+        unique_suggestion_str = rand1 + ', ' + unique_suggestion_str + ', ' + rand2;
+		
+		//document.querySelector("#related-keywords").innerHTML = all_phrase;//related_html;
+		var related_suggestions_html = document.querySelector("#related-keyword-suggestions").innerHTML;
+		document.querySelector("#related-keyword-suggestions").innerHTML = related_suggestions_html + ' ' + unique_suggestion_str;//related_html;
+		
+	}
+
+	function array_unique(array){
+		var unique_array = [];
+		for (i = 0; i < array.length; i++) {//console.log(array[i]);
+			if(!unique_array.includes(array[i])) { unique_array.push(array[i]) }
+		}
+		return unique_array;
+	}
+	
+	var warez_keywords = ['s01e01', 's01e02', 's01e03', 's01e04', 's01e05', 's01e06', 's01e07', 's01e08', 's01e09', 's01e10', 's02e01', 's02e02', 's02e03', 's02e04', 's02e05', 's02e06', 's02e07', 's02e08', 's02e09', 's02e10', 's03e01', 's03e02', 's03e03', 's03e04', 's03e05', 's03e06', 's03e07', 's03e08', 's03e09', 's03e10', 'WEBRip', 'hdrip', 'WEBRld', 'web', 'rip', '1080p', '720p', '480p', '360p', 'amzn', 'part.1', 'part.2', 'part.3', 'x264', 'x265', 'bluray', 'xvid', 'tv', 'xxx', '4k', '8k', 'hd', 'uhd', 'hdr', 'tvteam', 'mp4', 'aac', 'compressed', 'iso', '64bit', '32bit', 'engsub', 'esub', 'dubbed', 'split', 'scenes', 'codex', 'iptv', 'hulu', 'pro', 'portable', 'patch', 'serial', 'crack', 'key', 'keygen', 'ac3', 'flac', '256', '320', 'spotify', 'audible', 'bonus', 'cd', 'playlist', 'volume', 'level', 'pack', 'epub', '1ed', '2ed', '3ed', '4ed', 'assorted', 'repack', 'updated', 'chapter', 'v1', 'v2', 'v3', 'ogg', 'msd', 'build', 'multi', 'activated', 'Multilingual', 'Commercial', 'reg', 'Enterprise ', 'Edition', 'rar', 'macos', 'incl', 'license', 'final', 'plus', 'copied', 'copy', 'rarbg', 'yts', '1337x', 'dual audio', 'PC', 'windows', 'linux', 'Mac', 'PS2', 'PS3', 'PS4', 'PS5', 'XBOX360', 'Wii', 'Handheld ', 'IOS', 'iPad', 'iPhone', 'Android', 'game cd', 'game disk', 'game bluray', 'Steam', 'game iso', 'indie', 'AAA', 'strategy', 'action', 'puzzle', 'mmorpg', 'zombie', 'rpg', 'standalone', 'portable', 'game pack', 'game serial', 'game patch', 'game crack', 'Sandbox', 'Real-time strategy ', '(RTS)', 'Shooters', 'FPS', 'TPS', 'Multiplayer online battle arena', 'Multiplayer', 'online', 'battle', 'arena', 'MOBA', 'Role-playing', 'Role-playing', 'RPG', 'ARPG', 'Simulation and sports', 'Simulation', 'sports', 'Puzzlers and partys', 'Puzzlers', 'partys', 'Action-adventure', 'adventure', 'Survival and horror', 'Survival', 'horror', 'Platformer', 'Minecraft', 'Warcraft', 'Halo', 'gta', 'combat', 'Beat-em up', 'war', 'battle', 'Stealth', 'fighting', 'weapons', 'running', 'runner ', 'jumping', 'jumper', 'falling', 'video', 'gameplay', 'cars', 'frees', 'racings', 'onlines', 'shootings', 'fightings', 'girls', 'zombies', 'news', 'games for girls', 'games download', 'car racings', 'puzzles', 'bikes', 'multiplayers', 'drivings', 'game online', 'funs', 'actions', 'cools', 'adventures', 'kidss', 'plays', 'adult', 'porn', 'fucking', 'dating', 'challenge', 'climbing', 'game mod', 'game mode', 'attack', 'street', 'kombat', 'Rhythm', 'music', 'game music', 'game sound', 'fear', 'Text adventure', 'Graphic adventure', 'Visual novel', 'Interactive movie', 'Real-time 3D adventure', 'Tactical RPG', 'Monster Tamer', 'Life simulation', 'parking', 'Vehicle simulation', 'flying', 'aircraft', 'bomber', 'Auto battler ', 'Auto chess', 'Tower defense', 'Competitive', 'Board ', 'card', 'Casual', 'Logic', 'Trivia', 'Typing', 'Art', 'Educational', 'Esports', 'Open world', 'Audio', 'Browser', 'Text-based', 'Tile-based videos', 'Side-scrolling video', 'Game platforms', 'Arcade', 'Console', 'Handheld video', 'Massively multiplayer online', 'Mobile', 'Online', 'Personal computer', 'Nintendo', 'Mario', 'Pokémon', 'The legend of Zelda', 'Valve Corporation', 'Counter-strike'];
+	function get_random_warez_keywords(count){
+		shuffle(warez_keywords);
+		return warez_keywords.slice(0, count);
+	}
+   //related-keywords-suggestion-functions.js end
+   
+   	
+	//qr-code-functions.js start 
+	
+	
+	function gen_insert_qr_code(url, div_id){
+		document.getElementById(div_id).innerHTML = '';
+		try{
+			var qrcode = new QRCode(div_id, {
+				text: url,
+				width: 128,
+				height: 128,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+		}catch(err){}
+	}
+	/*
+	function insert_qr_code_lib(){
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.src = site_url + "js/qrcode.min.js";
+		document.getElementsByTagName("head")[0].appendChild(s);	
+	}
+	insert_qr_code_lib();
+	*/
+	//qr-code-functions.js end 
+	
+	
+
+
+	function generate_pagination(site_url, total_pages, pageno, url_args){
+		/*pagination start*/
+		pagination = '';
+		
+		// Show prev and first-page links.
+		if( (pageno>=2) && (pageno!=total_pages)){ 
+		  pagination = pagination + `<a href='${site_url}page/${total_pages}.html${url_args}' class='page links' data-link> << </a>`; 
+		  pagination = pagination + `<a href='${site_url}page/` + (pageno-2) + `.html${url_args}' class='page links' data-link> < </a>`; 
+		} 
+		
+		for (i=1; i<=10; i++) { 
+		  //removing negative indices's
+			if( !((pageno-i) <= 0)  ){
+			   pagination = pagination + `<a href='${site_url}page/` + (pageno-i) + `.html${url_args}' class='page links' data-link>` + (total_pages-(pageno-i)) + "</a>";
+			}
+		}
+		
+		if (pageno>=9){
+			// Show next and last-page links. 
+			if( (pageno<total_pages) || (pageno==total_pages)){	 
+				pagination = pagination + `<a href='${site_url}page/` + (pageno-10-1) + `.html${url_args}' class='page links' data-link> > </a>`; 
+				pagination = pagination + `<a href='${site_url}page/1.html${url_args}' class='page links' data-link> >> </a>`; 
+			} 
+		}
+		
+		return pagination;
+	}
+
+
+	function generate_pagination_params(site_url, total_pages, pageno, url_args){
+		/*pagination start*/
+		pagination = '';
+		
+		// Show prev and first-page links.
+		if( (pageno>=2) && (pageno!=total_pages)){ 
+		  pagination = pagination + `<a href='${site_url}?page=${total_pages}${url_args}' class='page links' data-link> << </a>`; 
+		  pagination = pagination + `<a href='${site_url}?page=` + (pageno-2) + `${url_args}' class='page links' data-link> < </a>`; 
+		} 
+		
+		for (i=1; i<=10; i++) { 
+		  //removing negative indices's
+			if( !((pageno-i) <= 0)  ){
+			   pagination = pagination + `<a href='${site_url}?page=` + (pageno-i) + `${url_args}' class='page links' data-link>` + (total_pages-(pageno-i)) + "</a>";
+			}
+		}
+		
+		if (pageno>=9){
+			// Show next and last-page links. 
+			if( (pageno<total_pages) || (pageno==total_pages)){	 
+				pagination = pagination + `<a href='${site_url}?page=` + (pageno-10-1) + `${url_args}' class='page links' data-link> > </a>`; 
+				pagination = pagination + `<a href='${site_url}?page=1${url_args}' class='page links' data-link> >> </a>`; 
+			} 
+		}
+		
+		return pagination;
+	}
+
+
+    //router.js start
+	/*router*/
+	const navigateTo = url => {
+		history.pushState(null, null, url);
+		router();
+	};
+
+	const router = async () => {
+		//router path match code goes here.
+		match_path();
+		
+	};
+
+	window.addEventListener("popstate", router);
+
+	document.addEventListener("DOMContentLoaded", () => {
+		document.body.addEventListener("click", e => {
+			if (e.target.matches("[data-link]")) {
+				e.preventDefault();
+				navigateTo(e.target.href);			
+			}
+		});
+
+		router();
+	});
+	//router.js end
+	
+	
+	
+	
+
+    //router-helper.js start	
+	async function fetchAsync(url) 
+	{
+	  let response = await fetch(url);
+	  let data = await response.json();
+	  data = JSON.stringify(data);
+	  return data;
+	}
+	
+
+	async function loadDoc(url) {  
+	  if( $store_data = get_local_storage(url) ) {
+        return 	$store_data;	
+		}
+	  else{
+		var data = await fetchAsync(url);
+		
+		set_local_storage(url, data);
+		return data;
+	  }  
+	}
+
+
+	
+	function pagination_insert(total_pages, page_no){
+		if(url_pattern == 'static'){
+		  var paginations = generate_pagination(site_url,  total_pages, page_no, '');
+	  }
+	  else if(url_pattern == 'params'){
+			var paginations = generate_pagination_params(site_url,  total_pages, page_no, '');
+	  }
+	  document.getElementById("paginations").innerHTML = paginations;
+	  document.getElementById("paginations").style.display = '';
+	}
+
+	
+	
+	async function get_total_pages(){
+		//storing data in browser tab session
+		var total_pages_json = sessionStorage.getItem("total_pages.json");
+		if( !total_pages_json ) {
+			total_pages_json = await fetchAsync(total_pages_count_api_url);
+            sessionStorage.setItem("total_pages.json", total_pages_json);			
+			}
+		  
+		//var total_pages_json = await loadDoc(total_pages_count_api_url);
+		total_pages_json = JSON.parse(total_pages_json);
+	    return total_pages_json['count'];
+	}
+
+
+	//router handler	
+	async function file_handler(title, gid, fileid){
+        document.getElementById("search_res_table").style.display = 'none';
+        document.getElementById("paginations").style.display = 'none';
+        only_title = title.split('_')[1];
+		
+        only_title = only_title.replace(/-/g, ' ');	
+		
+		update_page_loader_caption(only_title);
+		show_page_loader();
+		var page_data = await loadDoc(file_store_base_url + gid + '.json');
+		render_file_description(page_data);
+		
+	}
+
+	
+	
+	async function page_handler(page_no){	
+		if(page_no == 0){
+			//home page
+			//first hide previous pages results
+		    document.getElementById("search_res_table").style.display = 'none';
+			//hide previous paginations
+			document.getElementById("paginations").style.display = 'none';
+			
+			update_page_loader_caption('Loading Home Page.');
+            //get total pages first
+			var total_pages = await get_total_pages();
+			var page_data = await loadDoc(file_store_base_url + total_pages + '.json');
+			render_pages_results(page_data);
+			pagination_insert(total_pages, total_pages); 
+      
+		    //attach pagination links to scroll to top.
+		    attachLinksToScroll();
+		  
+		    document.title = 'Best File Search Engine | Free Download - Home';
+		    hide_page_loader(); //
+        		
+		}
+		else if (page_no.length > 0){
+			//first hide previous pages results
+		    document.getElementById("search_res_table").style.display = 'none';
+			//hide previous paginations
+			document.getElementById("paginations").style.display = 'none';
+			
+			update_page_loader_caption('Loading Page No: '+ page_no);
+			show_page_loader();
+			document.title = 'File search Page no: ' + page_no;
+		   //next pages
+		   var page_data = await loadDoc(file_store_base_url + page_no + '.json');
+		   render_pages_results(page_data);
+		   
+		   var total_pages = await get_total_pages();
+		   pagination_insert(total_pages, page_no); 
+      
+		    //attach pagination links to scroll to top.
+		    attachLinksToScroll();
+		  
+		    //document.title = 'Best File Search Engine | Free Download - Home';
+		    hide_page_loader(); //
+		}
+		
+		//document.getElementById("pagination-link").style.display = '';
+	}
+  
+  async function site_maps_handler(){
+      var total_pages = await get_total_pages();
+			var start = getQueryStringValue1('start');
+			if(start == ''){ start = 0; }
+			var site_mpas_html = gen_site_maps_links(total_pages, site_maps_link_count, start);
+			document.querySelector('#site-maps').innerHTML = site_mpas_html;
+			hide_page_loader();		
+  }
+  
+	function match_path(){
+		if(location.hash == '#open-modal' || location.hash == '#modal-close' || location.hash.startsWith('#search') ){
+			//throw new Error("Modal Dialog Box Opened!");
+			return false;
+		}
+		
+		//for site mpas
+		if(getQueryStringValue1('sitemap') != ''){
+		  site_maps_handler();
+			return false;
+		}
+		
+		if(url_pattern == 'static'){
+			if(match = location.pathname.match(/.*\/file\/(.*?)-gid-(.*?)-fileid-(.*?)\.html?$/) ){			
+				title = match[1]
+				gid = match[2]
+				fileid = match[3]
+				file_handler(title, gid, fileid)
+				console.log('Individual file view: gid=' + match[2] + ', & fileid=' + match[3])
+			}
+			else if(match = location.pathname.match(/.*\/page\/(\d+)\.html?$/) ){
+				page_no = match[1];				
+				page_handler(page_no);
+				console.log('Pages view: Page no=' + page_no);
+			}
+			else{				
+				page_handler('0');		
+				console.log('Home page view.');;
+			}
+		}
+		else if(url_pattern == 'params'){
+			var title = getQueryStringValue1('title');
+			fileid    = getQueryStringValue1('fileid');
+			gid       = getQueryStringValue1('gid');
+			var page  = getQueryStringValue1('page');
+			console.log(page);
+			//return;
+			if(gid && fileid ){
+				file_handler(title, gid, fileid);
+				console.log('Individual file view: gid id=' + gid + ', & fileid=' + fileid);
+			}
+			else if(page){
+				page_handler(page);
+				console.log('Pages view: Page no=' + page);
+			}
+			else{
+				page_handler('0');		
+				console.log('Home page view.');
+			}
+		}
+			
+	}
+	//router-helper.js end
+
+
+
+    //render-functions.js start
+    function hide_page_loader(){			
+		try{
+			loaders = document.getElementsByClassName("loader");
+			for(var i=0; i<loaders.length; i++) {
+				loaders[i].style.display = 'none';
+			}
+			//document.getElementById("search_res_table").style.display = '';                
+		}
+		catch(err) {}
+	}
+	
+	function show_page_loader(){			
+		try{
+			loaders = document.getElementsByClassName("loader");
+			for(var i=0; i<loaders.length; i++) {
+				loaders[i].style.display = '';
+			}
+			//document.getElementById("search_res_table").style.display = '';                
+		}
+		catch(err) {}
+	}
+	
+	function update_page_loader_caption(html){
+		document.getElementById("search-query-caption-container").style.display = '';	
+		document.getElementById("search-query-caption").innerHTML = html;	
+	}
+	//render-functions.js end
+	
+	
+		
+	
+	//modal-functions.js start	
+	function open_modal(elm) {
+	  document.getElementById("modal_title").innerHTML = elm + ':';
+	  url = "https://file-store.1111110.xyz/file/imtiaj/file-search-engine/texts/" + elm + ".txt";
+
+	  fetch(url)
+	  .then(response => response.text())
+	  .then(data => document.getElementById("modal_body").innerHTML = data);
+	}
+	
+	////modal-functions.js end
+	    
+	//scroll-functions.js start
+    // When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		document.getElementById("scrollToTop").style.display = "block";
+	  } else {
+		document.getElementById("scrollToTop").style.display = "none";
+	  }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+	//scroll-functions.js end
+	
+    
+	//search-sdk-handler-functions.js start
+	//event Listener for search finished
+	document.addEventListener('search_finished', (e)=>{
+		  search_data = e.detail.data;
+		  render_search_results(search_data);
+	});
+
+	//start search
+	function do_search(query_value) {
+		search_init(query_value);
+		query_string = query_value;
+		//var search_url = site_url + '#search?q='+ query_value; 
+		var search_url = '#search?q='+ query_value;
+		
+		update_page_loader_caption(`Loading Search for: '${query_value}'.`);
+		
+		
+		document.getElementById("progressbar-loader").style.display = '';
+		//hide file info, related files list, or previous list page	
+		document.getElementById("file").style.display = 'none';
+		document.getElementById("related-files").style.display = 'none';
+		document.getElementById("search_res_table").style.display = 'none';
+		//document.getElementById("res_data_rendered").innerHTML = '';
+		document.getElementById("paginations").style.display = 'none';
+		document.getElementById("q").value = query_value;
+		
+		//window.location = search_url;
+		window.location.hash = search_url;
+		console.log('Search view: query=' + query_value);
+		
+		return false;	
+	}
+	
+	//event listener for search progress
+	document.addEventListener('search_progress', (e)=>{
+		  progress = e.detail.data;
+		  
+		  //progress_floor = Math.floor(progress);
+		  progress_floor = (Math.round(progress / 10) * 10);
+		  update_page_loader_caption(`Search for:  '${query_string}'. <br/>${progress_floor}% completed.`);
+		  document.getElementById("progressbarfill-event").style.width = progress_floor + '%';
+		  console.log('Search progress: ' + progress_floor + '%.');
+	});
+	//search-sdk-handler-functions.js end
+	
+	
+	
+	    
+	
+	//site-maps-functions.js start
+	
+	function gen_site_maps_links(total_pages, link_count, start){
+		start = parseInt(start);
+		var counter_start = total_pages - link_count*start;
+    var counter_end =   total_pages - link_count*(start + 1);
+		
+		var site_maps_links_html = '';
+		for (var i = counter_start; i > counter_end; i--) {
+		  if(i>=1){
+				if(url_pattern == 'static'){
+					site_maps_links_html = site_maps_links_html + `<a href="${site_url}page/${i}.html">Page No: ${i}</a><br/>\n`;
+				}else{
+		     site_maps_links_html = site_maps_links_html + `<a href="${site_url}?page=${i}">Page No: ${i}</a><br/>\n`;
+		     }
+		  }
+		}
+		
+		if(i > 1){
+			var next_start = start + 1;			
+		  var next_site_map_link = `<a href="${site_url}?sitemap=1&start=${next_start}" data-link>Next Site Map</a>`;
+		   
+		}else{
+			next_site_map_link = '';
+		}
+		
+		return site_maps_links_html + next_site_map_link;
+	}
+	//site-maps-functions.js end
+	
+	
+   
+   //add-search-sdk.js start
+   /*
+   var search_sdk_url;
+   if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+	   search_sdk_url = '//file-search-engine.1111110.xyz/fileSearchApiLib.js';
+   }else{
+	   search_sdk_url = "//file-search-engine.1111110.xyz/fileSearchApiLib.js";
+   }
+   */
+   (function(){
+	   		var s = document.createElement("script");
+			s.type = "text/javascript";
+			s.async = 'async';
+			s.src = '//file-search-engine.1111110.xyz/fileSearchApiLib.js';
+			document.getElementsByTagName("head")[0].appendChild(s);
+   })();
+   //add-search-sdk.js end
+   
+      
+   
+   //addthis-widget.js start
+   var addthis_widget_inserted = false;
+   function insert_addthis_widget(){
+	  if(!addthis_widget_inserted){
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = 'async';
+		s.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-610bf8450879de02&async=1";
+		document.getElementsByTagName("head")[0].appendChild(s);
+		
+		addthis_widget_inserted = true;
+      }else{
+		//widget already inserted, just update the share url
+		addthis.update('share', 'url', window.location.href);
+        addthis.update('share', 'title', document.title);
+	  }
+	  
+    
+	}
+   //addthis-widget.js end
+   
+   </script>
