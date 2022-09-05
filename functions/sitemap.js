@@ -19,7 +19,7 @@ addEventListener('fetch', event => {
 
 //this require for cloudflare pages functions
 //*
-export async function onRequest( { request } ) {
+export async function onRequest( context ) {
   // Contents of context object
   /*
   const {
@@ -32,11 +32,11 @@ export async function onRequest( { request } ) {
   } = context;
   */
   
-  return await handleRequest( { request } ); //request is a part of context object in pages functions.
+  return await handleRequest( context.request ); //request is a part of context object in pages functions.
 }
 //*/
 
-async function handleRequest( { request } ) {
+async function handleRequest( request ) {
 //async function handleRequest(request) { //for worker
 	var url = request.url;
 	var dt = new Date(Date.now());
