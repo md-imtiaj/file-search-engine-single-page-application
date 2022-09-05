@@ -8,6 +8,7 @@ let apiServerSiteMap = 'https://torrents-api.1111110.xyz/api/torrent-site-map'; 
 
 let topUsers = ['TvTeam','jajaja','TGxGoodies','.BONE.','GalaxyRG','shmasti','ThumperTM','sotnikam','xxxlavalxxx','Truth4U','GoodFilms','haxnode','dauphong','YIFY','surferbroadband','Cristie65','threesixtyp','spy1984','GalaXXXy','Mesoglea','CenaCme','PornyXXX','roflcopter2110','MrStark','Cybotage','merzedes','tuts756','bluesenlasondas','thethingy','jmanwf','FirstUploads','rjaa','DeGun','SmashAndGrab','DarkAngie','pmnetwork','Drebben','palahubog','Dbaum2','bubanee','oneanight','Horisarte','dauphong','NoMercy','CJDanVamme','HighCode','Yurievij','manam69','thegreenfrog','bestec1234','zakareya','MANTESH','nemesis43','mc3dom','HeroMaster','Beolab1700','baby967','geogaddi000','Iznogoud9','vtwin88cube','kajalsus','jsk123','extremezone','Capajebo','only1joe','PirateBoy','Taker009','blaze69','mercs215','liluser','zingooo','thenoobish','mercs215','Askeen','azaq318','TheRival','eyezin','joew771','orcwar','NewPornUp','Agricola','fstrnu','lowfilms','gnv65','594mgnav','NawalaTPB','kotuwa','Iznogoud9','svdinesh','420weedman','ill88eagle','RobbieDee','AN0NYMOUS142857','zerodayz','cenkota','ulysses56','brodahisou','blackcanary','594mgnav','RubrumPopulus','horrorhound','STFmaryville','neil1966hardy','oracenelson','ParrowJack','VikTSlick','LeonardTSpock','gesserit','shipjolly','thenoobish','cad40','BLACKTROY','FatFreddy347','scene4all','webchella','AncientRome','Sarah116','rcbcsk','Drarbg','ADHDerby','sonilem','Stepherd','dohduhdah','STBGD','RedDr4gon','BOZX','7436746','MeRaDil','Sbyky','Ashja','GRNS3','RobbingHood','Capajebo','oracenelson','2nafish','RosaMannen','FiNEHD','NLUPPER002','zibbik','deepstatus','johnefp','maxrus','analogkid6103','sartre7','MeRaDil','black%20mamba%20TNT','minarcus','pucholoco','hotpena','insinuendo','aoloffline','icecracked','r3dcat','TheExecutive','Daman4Iife','Invader97','neil1966hardy','matreshka4u','cholo24','ThorntonWilde','twentyforty','MP4SUX','dtrbot','sailo','haloReD','sotis','POtHS11','Bullrout','Dattebayo03','crwildman','FatFuckFrank','tzuhalem','rpessoa','yfjfrj','CuriousGeorge','mfccorrea','tzuhalem','zacrenec','lkobescak','thelad53','brutalmaster','Ali-TPB'];
 
+
 /*
 //this require for cloudflare worker
 addEventListener('fetch', event => {
@@ -16,6 +17,9 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request));  
 })
 //*/
+
+
+
 
 //this require for cloudflare pages functions
 //*
@@ -236,8 +240,9 @@ function slugify (str) {
         str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
     }
 
-    str = str.replace(/[^a-z0-9 -\.]/g, '') // remove invalid chars
+    str = str
         .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/[^\w\-\.]+/g, '') // remove invalid chars
         .replace(/-+/g, '-') // collapse dashes 
         .replace(/^-+/g, '') // Trim - from start of text
 		.replace(/-+$/g, ''); // Trim - from end of text
