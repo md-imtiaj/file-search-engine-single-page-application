@@ -19,8 +19,9 @@ addEventListener('fetch', event => {
 
 //this require for cloudflare pages functions
 //*
-export async function onRequest(context) {
+export async function onRequest( { request } ) {
   // Contents of context object
+  /*
   const {
     request, // same as existing Worker API
     env, // same as existing Worker API
@@ -29,6 +30,7 @@ export async function onRequest(context) {
     next, // used for middleware or to fetch assets
     data, // arbitrary space for passing data between middlewares
   } = context;
+  */
   
   return await handleRequest( { request } ); //request is a part of context object in pages functions.
 }
