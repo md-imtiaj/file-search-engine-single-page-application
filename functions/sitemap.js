@@ -46,7 +46,7 @@ async function handleRequest( request ) {
 //async function handleRequest(request) { //for worker
 	var url = request.url;
 	var dt = new Date(Date.now());
-    dateToday = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
+    var dateToday = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
 	
 	
 	const { searchParams } = new URL(url);
