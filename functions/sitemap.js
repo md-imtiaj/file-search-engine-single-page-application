@@ -42,8 +42,8 @@ export async function onRequest( context ) {
 //*/
 
 async function handleRequest( request ) {
-	try {
-//async function handleRequest(request) { //for worker
+  try {
+    
 	var url = request.url;
 	var dt = new Date(Date.now());
     var dateToday = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
@@ -72,92 +72,92 @@ async function handleRequest( request ) {
 	//if(tid==null){ tid = 'No-tid-found.'; }
 	let request_url = url.toString();
 	
-	site_link =  request_url.split('?');
+	var site_link =  request_url.split('?');
     site_link = site_link[0];
     site_link =  site_link.split('sitemap');
     site_link = site_link[0];
 	
-	siteMapBody = '';
+	var siteMapBody = '';
 	
 	
 	//sitemap urlset
 	//recent with pages (recent pagination)
 	if( recent != 'No-recent-found.' && page != 'No-page-found.' ){
-		pageNumber = page;
-		apiUrl = apiServer + '?pid=data_top100_recent_' + (pageNumber - 1) + '.json';
+		var pageNumber = page;
+		var apiUrl = apiServer + '?pid=data_top100_recent_' + (pageNumber - 1) + '.json';
 		if(pageNumber == 1){ apiUrl = apiServer + '?pid=data_top100_recent.json'; }
 		
 		
-		json_data = await fetch(apiUrl);
-		results = await json_data.json();
+		var json_data = await fetch(apiUrl);
+		var results = await json_data.json();
 		
 		
 		siteMapBody = json_to_sitemap(results, site_link);
-		siteMap = sendXmlSiteMapUrlset(siteMapBody);
+		var siteMap = sendXmlSiteMapUrlset(siteMapBody);
 		
 	}
 	//sitemap urlset
 	else if(user != 'No-user-found.' && userpage != 'No-userpage-found.'){
-		userName = user;
+		var userName = user;
 		
-		apiUrl = apiServer + `?q=user%3A${userName}%3A${userpage}`;
+		var apiUrl = apiServer + `?q=user%3A${userName}%3A${userpage}`;
 		if(userpage == 1){ apiUrl = apiServer + `?q=user%3A${userName}`; }
 		
-		json_data = await fetch(apiUrl);
-		results = await json_data.json();
+		var json_data = await fetch(apiUrl);
+		var results = await json_data.json();
 		
 		siteMapBody = json_to_sitemap(results, site_link);
-		siteMap = sendXmlSiteMapUrlset(siteMapBody);
+		var siteMap = sendXmlSiteMapUrlset(siteMapBody);
 	}
 	//user
 	//sitemap index
 	else if(user != 'No-user-found.'){
-		userName = user;
+		var userName = user;
 		
-		apiUrl = apiServer + '?q=pcnt%3A' + userName;
+		var apiUrl = apiServer + '?q=pcnt%3A' + userName;
 		
-		json_data = await fetch(apiUrl);
-		results = await json_data.text();
+		var json_data = await fetch(apiUrl);
+		var results = await json_data.text();
 		
-		pages_count =  results.replace(/\D/g,''); //replace all no numbers
+		var pages_count =  results.replace(/\D/g,''); //replace all no numbers
 		pages_count = parseInt(pages_count);
 		
 		for(let i=1; i<=pages_count; i++){
-			siteMapIndex =  site_link  + `sitemap?user=${userName}&amp;userpage=${i}`;
+			var siteMapIndex =  site_link  + `sitemap?user=${userName}&amp;userpage=${i}`;
 			siteMapBody = siteMapBody + `<sitemap><loc>${siteMapIndex}</loc><lastmod>${dateToday}</lastmod></sitemap>\n`;		
 		}
 		
-		siteMap = sendXmlSiteMapIndex(siteMapBody);
+		var siteMap = sendXmlSiteMapIndex(siteMapBody);
 	}
 	//sitemap index
 	else if(users != 'No-users-found.'){
 		for(let i=0; i<topUsers.length; i++){		
-			user = topUsers[i];
+			var user = topUsers[i];
 			if(user!=''){
-				siteMapIndex =  site_link  + `sitemap?user=${user}`;
+				var siteMapIndex =  site_link  + `sitemap?user=${user}`;
 				siteMapBody = siteMapBody + `<sitemap><loc>${siteMapIndex}</loc><lastmod>${dateToday}</lastmod></sitemap>\n`;
 			}			
 		}
 		
-		siteMap = sendXmlSiteMapIndex(siteMapBody);
+		var siteMap = sendXmlSiteMapIndex(siteMapBody);
 	}
 	else if(recent != 'No-recent-found.' ){
 	
 		for(let i=1; i<=159; i++){		
-			siteMapIndex = site_link  + `sitemap?recent=true&amp;page=${i}`;
+			var siteMapIndex = site_link  + `sitemap?recent=true&amp;page=${i}`;
 			siteMapBody = siteMapBody + `<sitemap><loc>${siteMapIndex}</loc><lastmod>${dateToday}</lastmod></sitemap>\n`;       	
 		}
 		
-		siteMap = sendXmlSiteMapIndex(siteMapBody);	
+		var siteMap = sendXmlSiteMapIndex(siteMapBody);	
 	}
 	//for temporary, it is same as recent 
 	else{
 		for(let i=1; i<=159; i++){		
-			siteMapIndex = site_link  + `sitemap?recent=true&amp;page=${i}`;
+			var siteMapIndex = site_link  + `sitemap?recent=true&amp;page=${i}`;
 			siteMapBody = siteMapBody + `<sitemap><loc>${siteMapIndex}</loc><lastmod>${dateToday}</lastmod></sitemap>\n`;       	
 		}
 		
-		siteMap = sendXmlSiteMapIndex(siteMapBody);	
+		var siteMap = sendXmlSiteMapIndex(siteMapBody);	
 	}
 	//sitemap urlset
 	//not implemented yet
