@@ -32,7 +32,12 @@ export async function onRequest( context ) {
   } = context;
   */
   
-  await handleRequest( context.request ); //request is a part of context object in pages functions.
+  let siteMap = await handleRequest( context.request ); //request is a part of context object in pages functions.
+  return new Response(siteMap, {
+		headers: {
+		  'content-type': 'text/xml;charset=UTF-8',
+		},
+	  });
 }
 //*/
 
@@ -171,11 +176,15 @@ async function handleRequest( request ) {
 	}
 	*/	
 	
+	/*
 	return new Response(siteMap, {
 		headers: {
 		  'content-type': 'text/xml;charset=UTF-8',
 		},
 	  });
+	*/
+	
+	return siteMap;
 }
 
 
