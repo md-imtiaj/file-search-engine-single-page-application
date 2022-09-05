@@ -20,7 +20,7 @@ addEventListener('fetch', event => {
 //this require for cloudflare pages functions
 //*
 export async function onRequestGet(request) {
-  handleRequest(request);
+  return await handleRequest( { request } ); //request is a part of context object in pages functions.
 }
 //*/
 
