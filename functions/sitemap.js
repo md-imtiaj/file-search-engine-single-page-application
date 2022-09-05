@@ -79,7 +79,7 @@ async function handleRequest( request ) {
 	//sitemap urlset
 	//recent with pages (recent pagination)
 	if( recent != 'No-recent-found.' && page != 'No-page-found.' ){
-		var pageNumber = page;
+		var pageNumber = parseInt(page);
 		var apiUrl = apiServer + '?pid=data_top100_recent_' + (pageNumber - 1) + '.json';
 		if(pageNumber == 1){ apiUrl = apiServer + '?pid=data_top100_recent.json'; }
 		
