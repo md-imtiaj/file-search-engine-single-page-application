@@ -33,7 +33,7 @@ export async function onRequest( context ) {
   */
   
   let siteMap = await handleRequest( context.request ); //request is a part of context object in pages functions.
-  return new Response(siteMap, {
+  return await new Response(siteMap, {
 		headers: {
 		  'content-type': 'text/xml;charset=UTF-8',
 		},
