@@ -20,7 +20,7 @@ addEventListener('fetch', event => {
 //this require for cloudflare pages functions
 //*
 export async function onRequestGet(request) {
-  return handleRequest(request);
+  return new Response( handleRequest(request) );
 }
 //*/
 
