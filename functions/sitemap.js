@@ -32,7 +32,7 @@ export async function onRequest( context ) {
   } = context;
   */
   
-  return await handleRequest( context.request ); //request is a part of context object in pages functions.
+  await handleRequest( context.request ); //request is a part of context object in pages functions.
 }
 //*/
 
