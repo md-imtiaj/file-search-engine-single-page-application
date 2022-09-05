@@ -32,12 +32,7 @@ export async function onRequest( context ) {
   } = context;
   */
   
-  let siteMap = await handleRequest( context.request ); //request is a part of context object in pages functions.
-  /*return await new Response(siteMap, {
-		headers: {
-		  'content-type': 'text/xml;charset=UTF-8',
-		},
-	  });*/
+  let siteMap = await handleRequest( context.request ); //request is a part of context object in pages functions.  
   return siteMap;
 }
 //*/
@@ -93,7 +88,7 @@ async function handleRequest( request ) {
 		var results = await json_data.json();
 		
 		
-		siteMapBody = json_to_sitemap(results, site_link);
+		siteMapBody = json_to_sitemap(results, site_link, dateToday);
 		var siteMap = sendXmlSiteMapUrlset(siteMapBody);
 		
 	}
@@ -107,7 +102,7 @@ async function handleRequest( request ) {
 		var json_data = await fetch(apiUrl);
 		var results = await json_data.json();
 		
-		siteMapBody = json_to_sitemap(results, site_link);
+		siteMapBody = json_to_sitemap(results, site_link, dateToday);
 		var siteMap = sendXmlSiteMapUrlset(siteMapBody);
 	}
 	//user
@@ -197,17 +192,17 @@ async function handleRequest( request ) {
 
 
 
-function json_to_sitemap(results, site_link){
-	siteMapBody = '';
+function json_to_sitemap(results, site_link, dateToday){
+	var siteMapBody = '';
 	for ( var i = 0; i < results.length; i++){
-			res = results[i];
-			id = res['id'];
+			var res = results[i];
+			var id = res['id'];
 			id =  id.replace(/\D/g,''); //replace all no numbers
 		    id = parseInt(id);
-			ids = id.toString(36);
-			title = res['name'];
-			sluz = slugify(title);
-			siteMapUrl =  site_link + `T${ids}/` + rawurlencode(sluz);
+			var ids = id.toString(36);
+			var title = res['name'];
+			var sluz = slugify(title);
+			var siteMapUrl =  site_link + `T${ids}/` + rawurlencode(sluz);
 			siteMapBody = siteMapBody +  `<url><loc>${siteMapUrl}</loc><lastmod>${dateToday}</lastmod></url>\n`;
 		}
 	return siteMapBody;
