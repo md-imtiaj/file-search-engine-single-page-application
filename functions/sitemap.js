@@ -197,8 +197,7 @@ function json_to_sitemap(results, site_link, dateToday){
 	for ( var i = 0; i < results.length; i++){
 			var res = results[i];
 			var id = res['id'];
-			id =  id.replace(/\D/g,''); //replace all no numbers
-		    id = parseInt(id);
+			id = parseInt(id);
 			var ids = id.toString(36);
 			var title = res['name'];
 			var sluz = slugify(title);
