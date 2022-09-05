@@ -42,6 +42,7 @@ export async function onRequest( context ) {
 //*/
 
 async function handleRequest( request ) {
+	try {
 //async function handleRequest(request) { //for worker
 	var url = request.url;
 	var dt = new Date(Date.now());
@@ -185,6 +186,10 @@ async function handleRequest( request ) {
 	*/
 	
 	return siteMap;
+  }
+  catch(err) {
+    return err.message;
+  }
 }
 
 
