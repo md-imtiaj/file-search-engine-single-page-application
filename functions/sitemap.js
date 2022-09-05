@@ -132,9 +132,9 @@ async function handleRequest( request ) {
 	//sitemap index
 	else if(users != 'No-users-found.'){
 		for(let i=0; i<topUsers.length; i++){		
-			var user = topUsers[i];
+			var topUser = topUsers[i];
 			if(user!=''){
-				var siteMapIndex =  site_link  + `sitemap?user=${user}`;
+				var siteMapIndex =  site_link  + `sitemap?user=${topUser}`;
 				siteMapBody = siteMapBody + `<sitemap><loc>${siteMapIndex}</loc><lastmod>${dateToday}</lastmod></sitemap>\n`;
 			}			
 		}
