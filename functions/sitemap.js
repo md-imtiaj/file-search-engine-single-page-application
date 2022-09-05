@@ -19,12 +19,23 @@ addEventListener('fetch', event => {
 
 //this require for cloudflare pages functions
 //*
-export async function onRequestGet(request) {
+export async function onRequest(context) {
+  // Contents of context object
+  const {
+    request, // same as existing Worker API
+    env, // same as existing Worker API
+    params, // if filename includes [id] or [[path]]
+    waitUntil, // same as ctx.waitUntil in existing Worker API
+    next, // used for middleware or to fetch assets
+    data, // arbitrary space for passing data between middlewares
+  } = context;
+  
   return await handleRequest( { request } ); //request is a part of context object in pages functions.
 }
 //*/
 
-async function handleRequest(request) {
+async function handleRequest( { request } ) {
+//async function handleRequest(request) { //for worker
 	var url = request.url;
 	var dt = new Date(Date.now());
     dateToday = dt.getFullYear() + "-" + (dt.getMonth() + 1) + "-" + dt.getDate();
